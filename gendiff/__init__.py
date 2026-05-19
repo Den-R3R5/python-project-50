@@ -1,7 +1,7 @@
-from .gendiff import gendiff
-from .parser import arg_parse
+from .cli import arg_parse
+from .gendiff import generate_diff
 
 __all__ = (
-    "gendiff",
+    "generate_diff",
     "arg_parse",
 )
