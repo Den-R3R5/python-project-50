@@ -1,6 +1,8 @@
 install:
 	uv sync
 gendiff:
+	uv run gendiff tests/test_data/file1.json tests/test_data/file2.json
+gendiff-help:
 	uv run gendiff -h
 lint:
 	uv run ruff check gendiff
