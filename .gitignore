@@ -11,3 +11,6 @@ build/
 .coverage
 coverage.xml
 *_cache/
+
+# Charm VHS
+demo.tape
