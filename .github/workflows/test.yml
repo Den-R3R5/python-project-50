@@ -25,7 +25,7 @@ jobs:
         run: |
           make test-coverage
       - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v7
+        uses: docs/example-action@b16d2601a6b948e2fb26f3772276581f31daa7cd
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
@@ -33,3 +33,4 @@ jobs:
             -Dsonar.projectKey=Den-R3R5_python-project-50
             -Dsonar.organization=den-r3r5
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.sources=gendiff
