@@ -5,8 +5,11 @@ update:
 	uv lock --upgrade
 	uv sync
 
-gendiff:
+gendiff-json:
 	uv run gendiff tests/test_data/file1.json tests/test_data/file2.json
+
+gendiff-yml:
+	uv run gendiff tests/test_data/file1.yml tests/test_data/file2.yml
 
 gendiff-help:
 	uv run gendiff -h
