@@ -4,5 +4,8 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Den-R3R5_python-project-50&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Den-R3R5_python-project-50)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Den-R3R5_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Den-R3R5_python-project-50)
 
-### Gendiff
-![Demo](gifs/gendiff.gif)
+### Gendiff .json
+![Demo](gifs/json.gif)
+
+### Gendiff .yml
+![Demo](gifs/yml.gif)
