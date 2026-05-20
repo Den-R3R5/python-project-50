@@ -5,7 +5,6 @@ def _to_lower_bool(value):
 
 
 def generate_diff(first_file, second_file):
-    first_file, second_file
     keys_massive = sorted(first_file.keys() | second_file.keys())
     result = ["{"]
     for key in keys_massive:
