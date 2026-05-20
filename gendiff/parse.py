@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import yaml
+from yaml.loader import SafeLoader
 
 
 def _check_format(file_path):
@@ -12,6 +14,8 @@ def _load_file(file_path):
     with open(file_path, "r") as f:
         if file_format in ".json":
             return json.load(f)
+        if file_format in (".yaml", ".yml"):
+            return yaml.load(f, Loader=SafeLoader)
 
 
 def parse(first_file, second_file):
