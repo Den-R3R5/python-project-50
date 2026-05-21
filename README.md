@@ -16,5 +16,5 @@
 ### Gendiff plain format
 ![Demo](gifs/plain-format.gif)
 
-### Gendiff plain format
+### Gendiff json format
 ![Demo](gifs/json-format.gif)
