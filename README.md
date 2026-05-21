@@ -10,5 +10,8 @@
 ### Gendiff .yml
 ![Demo](gifs/yml.gif)
 
-### Gendiff trees
-![Demo](gifs/demo-trees.gif)
+### Gendiff stylish format
+![Demo](gifs/stylish.gif)
+
+### Gendiff plain format
+![Demo](gifs/plain.gif)
