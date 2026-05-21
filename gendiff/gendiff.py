@@ -1,22 +1,36 @@
-def _to_lower_bool(value):
-    if isinstance(value, bool):
-        return str(value).lower()
-    return value
+from .stylish_formater import stylish
 
 
-def generate_diff(first_file, second_file):
+def diff_builder(first_file, second_file):
     keys_massive = sorted(first_file.keys() | second_file.keys())
-    result = ["{"]
+    result = []
     for key in keys_massive:
         if key in first_file and key in second_file:
-            if first_file[key] == second_file[key]:
-                result.append(f"    {key}: {_to_lower_bool(first_file[key])}")
+            if isinstance(first_file[key], dict) and isinstance(second_file[key], dict):
+                result.append({"key": key, 
+                "type": "attached",
+                "children": diff_builder(first_file[key], second_file[key])})
+            elif first_file[key] == second_file[key]:
+                result.append({"key": key, 
+                "type": "unchanged", 
+                "value": first_file[key]})
             else:
-                result.append(f"  - {key}: {_to_lower_bool(first_file[key])}")
-                result.append(f"  + {key}: {_to_lower_bool(second_file[key])}")
+                result.append({"key": key, 
+                "type": "changed", 
+                "value_old": first_file[key], 
+                "value_new": second_file[key]})
         elif key in first_file:
-            result.append(f"  - {key}: {_to_lower_bool(first_file[key])}")
+            result.append({"key": key, 
+            "type": "deleted", 
+            "value": first_file[key]})
         else:
-            result.append(f"  + {key}: {_to_lower_bool(second_file[key])}")
-    result.append("}")
-    return "\n".join(result)
+            result.append({"key": key, 
+            "type": "added", 
+            "value": second_file[key]})
+    return result
+
+
+def generate_diff(first_file, second_file, format_name="stylish"):
+    tree = diff_builder(first_file, second_file)
+    result = stylish(tree)
+    return result
