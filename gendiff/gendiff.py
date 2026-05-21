@@ -1,5 +1,6 @@
 from .formaters.set_format import set_format
 
+
 def diff_builder(first_file, second_file):
     keys_massive = sorted(first_file.keys() | second_file.keys())
     result = []
