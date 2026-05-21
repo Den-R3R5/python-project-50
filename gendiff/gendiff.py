@@ -1,5 +1,4 @@
-from .stylish_formater import stylish
-
+from .formaters.set_format import set_format
 
 def diff_builder(first_file, second_file):
     keys_massive = sorted(first_file.keys() | second_file.keys())
@@ -44,5 +43,4 @@ def diff_builder(first_file, second_file):
 
 def generate_diff(first_file, second_file, format_name="stylish"):
     tree = diff_builder(first_file, second_file)
-    result = stylish(tree)
-    return result
+    return set_format(tree, format_name)
