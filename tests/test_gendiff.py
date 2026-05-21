@@ -49,3 +49,19 @@ def test_gendiff_plain_yml():
     assert generate_diff(file1, file2, "plain") == read_file(
         "result3-4-plain.txt"
     )
+
+
+def test1_gendiff_to_json_format():
+    file1 = get_test_data_pathlib("file3.json")
+    file2 = get_test_data_pathlib("file4.json")
+    assert generate_diff(file1, file2, "json") == read_file(
+        "result3-4-json.txt"
+    )
+
+
+def test2_gendiff_to_json_format():
+    file1 = get_test_data_pathlib("file3.yml")
+    file2 = get_test_data_pathlib("file4.yml")
+    assert generate_diff(file1, file2, "json") == read_file(
+        "result3-4-json.txt"
+    )
