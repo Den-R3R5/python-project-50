@@ -12,5 +12,7 @@ build/
 coverage.xml
 *_cache/
 
+# test file
+gendiff/temp.py
 # Charm VHS
 demo.tape
