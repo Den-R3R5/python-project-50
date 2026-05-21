@@ -1,4 +1,5 @@
 from .formaters.set_format import set_format
+from .parse import parse
 
 
 def diff_builder(first_file, second_file):
@@ -42,6 +43,7 @@ def diff_builder(first_file, second_file):
     return result
 
 
-def generate_diff(first_file, second_file, format_name="stylish"):
+def generate_diff(file1, file2, format_name="stylish"):
+    first_file, second_file = parse(file1, file2)
     tree = diff_builder(first_file, second_file)
     return set_format(tree, format_name)
