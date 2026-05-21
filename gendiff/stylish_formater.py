@@ -15,6 +15,7 @@ def _format(value, depth):
         return "\n".join(result)
     return value
 
+
 def stylish(tree, depth=1):
     result = ["{"]
     for node in tree:
@@ -28,13 +29,21 @@ def stylish(tree, depth=1):
             inner = stylish(node["children"], depth + 1)
             result.append(f"{indent}{key}: {inner}")
         elif node_type == "unchanged":
-            result.append(f"{indent}{key}: {_format(node["value"], depth)}")
+            result.append(f"{indent}{key}: {_format(node['value'], depth)}")
         elif node_type == "changed":
-            result.append(f"{sign_indent}- {key}: {_format(node["value_old"], depth)}")
-            result.append(f"{sign_indent}+ {key}: {_format(node["value_new"], depth)}")
+            result.append(
+                f"{sign_indent}- {key}: {_format(node['value_old'], depth)}"
+            )
+            result.append(
+                f"{sign_indent}+ {key}: {_format(node['value_new'], depth)}"
+            )
         elif node_type == "deleted":
-            result.append(f"{sign_indent}- {key}: {_format(node["value"], depth)}")
+            result.append(
+                f"{sign_indent}- {key}: {_format(node['value'], depth)}"
+            )
         elif node_type == "added":
-            result.append(f"{sign_indent}+ {key}: {_format(node["value"], depth)}")
+            result.append(
+                f"{sign_indent}+ {key}: {_format(node['value'], depth)}"
+            )
     result.append(f"{close_indent}}}")
     return "\n".join(result)
