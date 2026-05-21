@@ -17,8 +17,6 @@ def plain(tree, depth=1, directory=""):
 
         if node_type == "attached":
             inner = plain(node["children"], depth + 1, directory + f"{key}.")
-
-            print(directory)
             result.append(f"{inner}")
         elif node_type == "changed":
             result.append(
