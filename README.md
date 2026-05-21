@@ -11,7 +11,7 @@
 ![Demo](gifs/yml.gif)
 
 ### Gendiff stylish format
-![Demo](gifs/stylish.gif)
+![Demo](gifs/stylish-format.gif)
 
 ### Gendiff plain format
-![Demo](gifs/plain.gif)
+![Demo](gifs/plain-format.gif)
