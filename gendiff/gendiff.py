@@ -46,4 +46,4 @@ def diff_builder(first_file, second_file):
 def generate_diff(file1, file2, format_name="stylish"):
     first_file, second_file = parse(file1, file2)
     tree = diff_builder(first_file, second_file)
-    return set_format(tree, format_name) + "\n"
+    return set_format(tree, format_name)
