@@ -5,7 +5,10 @@ def _format(value, depth):
         return "null"
     if isinstance(value, dict):
         return "[complex value]"
-    return f"'{value}'"
+    if isinstance(value, str):
+        return f"'{value}'"
+    return value
+    
 
 
 def plain(tree, depth=1, directory=""):
@@ -31,4 +34,4 @@ def plain(tree, depth=1, directory=""):
                 f"Property '{directory}{key}' was added "
                 f"with value: {_format(node['value'], depth)}"
             )
-    return "\n".join(result)
+    return "\n".join(result) 
