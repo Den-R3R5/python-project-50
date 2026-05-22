@@ -65,17 +65,18 @@ def test2_gendiff_to_json_format():
     assert generate_diff(file1, file2, "json") == read_file(
         "result3-4-json.txt"
     )
+
+
 def test_t1():
     file1 = get_test_data_pathlib("t1.json")
     file2 = get_test_data_pathlib("t2.json")
-    assert generate_diff(file1, file2, "plain") == read_file(
-        "result_plain"
-    )
+    assert generate_diff(file1, file2, "plain") == read_file("result_plain")
 
 
 def test_t2():
     file1 = get_test_data_pathlib("t1.yml")
     file2 = get_test_data_pathlib("t2.yml")
-    assert generate_diff(file1, file2, ) == read_file(
-        "result_stylish"
-    )
+    assert generate_diff(
+        file1,
+        file2,
+    ) == read_file("result_stylish")
